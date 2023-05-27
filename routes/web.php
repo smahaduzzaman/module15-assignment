@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\ValidationController;
@@ -30,27 +31,28 @@ Route::middleware(['auth1'])->group(function(){
 
 // Question 5
 Route::resource('products', ProductController::class);
-
-// GET      /products              ->  index()
-// GET      /products/create       ->  create()
-// POST     /products              ->  store()
-// GET      /products/{product}    ->  show($id)
-// GET      /products/{product}/edit  ->  edit($id)
-// PUT      /products/{product}    ->  update($id)
-// PATCH    /products/{product}    ->  update($id)
-// DELETE   /products/{product}    ->  destroy($id)
-
-
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+GET      /products              ->  index()
+GET      /products/create       ->  create()
+POST     /products              ->  store()
+GET      /products/{product}    ->  show($id)
+GET      /products/{product}/edit  ->  edit($id)
+PUT      /products/{product}    ->  update($id)
+PATCH    /products/{product}    ->  update($id)
+DELETE   /products/{product}    ->  destroy($id)0
+ */
+
+
+// Question 6
+// Route::post('/contact', ContactController::class);
+
+
+
+// Task 7: Resource Controller
+Route::resource('posts', PostController::class);
+
+
+// Task 8: Blade Template Engine
 
 Route::get('/', function () {
     return view('welcome');

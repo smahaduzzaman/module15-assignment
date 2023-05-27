@@ -1,23 +1,29 @@
 <?php
 
+use App\Http\Controllers\PostController;
+
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ValidationController;
 use App\Http\Middleware\ValidationMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// Question 1
+// Task 1: Request Validation
+
 Route::post('/validation', [ValidationController::class, 'RequestValidation'])
     ->middleware([ValidationMiddleware::class]);
 
-// Question 2
+// Task 2: Request Redirect
+
 Route::get('/redirect1/{key}', [RedirectController::class, 'RedirectAction1'])
     ->middleware([RedirectMiddleware::class]);
 Route::get('/redirect2', [RedirectController::class, 'RedirectAction2']);
 
-// Question 3
+// Task 3: Global Middleware
 
-// Question 4
+// Task 4: Route Middleware
+
+
 Route::middleware(['auth1'])->group(function(){
     Route::get('/auth1/{key}', [AuthController::class, 'AuthAction1']);
     Route::get('/auth2/{key}', [AuthController::class, 'AuthAction2']);
@@ -25,7 +31,8 @@ Route::middleware(['auth1'])->group(function(){
     Route::get('/auth4/{key}', [AuthController::class, 'AuthAction4']);
 });
 
-// Question 5
+// Task 5: Controller
+
 Route::resource('products', ProductController::class);
 
 // GET      /products              ->  index()
@@ -36,6 +43,12 @@ Route::resource('products', ProductController::class);
 // PUT      /products/{product}    ->  update($id)
 // PATCH    /products/{product}    ->  update($id)
 // DELETE   /products/{product}    ->  destroy($id)
+
+// Task 6: Single Action Controller
+// Route::post('/contact', ContactController::class);
+
+// Task 7: Resource Controller
+Route::resource('posts', PostController::class);
 
 
 
