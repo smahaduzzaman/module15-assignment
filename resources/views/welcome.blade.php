@@ -61,7 +61,8 @@ main {
 
 .hero p {
     font-size: 20px;
-    margin-bottom: 20px;
+    width: 75%;
+    margin: 20px auto;
 }
 
 .hero .btn {
@@ -98,8 +99,8 @@ main {
             <section class="hero">
                 <div class="container">
                     {{-- <img src="{{ asset('images/hero.jpg') }}" alt="Hero Image"> --}}
-                    <h1>Laravel Byke Race Competetion 2023</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h1>Byke Race Competetion 2023</h1>
+                    <p>The Bike Race Competition 2023 is an exhilarating event that brings together bike enthusiasts, professional riders, and adrenaline seekers from around the world. Held annually, this highly anticipated competition showcases the ultimate display of speed, skill, and endurance in the realm of bike racing.</p>
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
             </section>

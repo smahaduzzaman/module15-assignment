@@ -15,11 +15,22 @@ Route::get('/validation', [ValidationController::class, 'RequestValidation'])
     ->middleware([ValidationMiddleware::class]);
 
 // Question 2
-Route::get('/redirect1/{key}', [RedirectController::class, 'RedirectAction1'])
+Route::get('/home/{key}', [RedirectController::class, 'RedirectAction1'])
     ->middleware([RedirectMiddleware::class]);
-Route::get('/redirect2', [RedirectController::class, 'RedirectAction2']);
+Route::get('/dashboard', [RedirectController::class, 'RedirectAction2']);
 
-// Question 3
+// Task 3: Global Middleware
+Route::middleware(['log.request'])->group(function () {
+    Route::get('/global-middleware', function () {
+        return 'Global Middleware';
+    });
+
+    Route::get('/global-middleware2', function () {
+        return 'Global Middleware 2';
+    });
+});
+
+
 
 // Question 4
 Route::middleware(['auth1'])->group(function(){
@@ -45,7 +56,6 @@ DELETE   /products/{product}    ->  destroy($id)0
 
 // Question 6
 // Route::post('/contact', ContactController::class);
-
 
 
 // Task 7: Resource Controller

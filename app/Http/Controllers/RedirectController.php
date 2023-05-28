@@ -8,14 +8,14 @@ class RedirectController extends Controller
 {
     function RedirectAction1():string {
         return response()->json([
-            'message' => 'Redirected 1',
+            'message' => 'This is Home Page',
             'status_code' => '200'
         ]);
     }
 
     function RedirectAction2():string {
         return response()->json([
-            'message' => 'Redirected 2',
+            'message' => 'This is Dashboard Page',
             'status_code' => '200'
         ]);
     }

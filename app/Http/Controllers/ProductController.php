@@ -2,38 +2,62 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
-
 
 class ProductController extends Controller
 {
     public function index()
     {
-        // $products = Product::all();
-        return "list of products";
+        $products = Product::all();
+        return view('products.index', compact('products'));
     }
+
     public function create()
     {
-        return "create a product";
+        return view('products.create');
     }
+
     public function store(Request $request)
     {
-        return "store a product";
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'description' => 'required',
+        ]);
+
+        Product::create($request->all());
+
+        return redirect()->route('products.index')
+            ->with('success', 'Product created successfully.');
     }
-    public function show(string $id)
+
+    public function edit($id)
     {
-        return "show a product";
+        $product = Product::find($id);
+        return view('products.edit', compact('product'));
     }
-    public function edit(string $id)
+
+    public function update(Request $request, $id)
     {
-        return "edit a product";
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'description' => 'required',
+        ]);
+
+        $product = Product::find($id);
+        $product->update($request->all());
+
+        return redirect()->route('products.index')
+            ->with('success', 'Product updated successfully.');
     }
-    public function update(Request $request, string $id)
+
+    public function destroy($id)
     {
-        return "update a product";
-    }
-    public function destroy(string $id)
-    {
-        return "delete a product";
+        Product::destroy($id);
+
+        return redirect()->route('products.index')
+            ->with('success', 'Product deleted successfully.');
     }
 }

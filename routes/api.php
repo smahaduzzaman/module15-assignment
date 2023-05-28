@@ -20,9 +20,18 @@ Route::get('/redirect1/{key}', [RedirectController::class, 'RedirectAction1'])
 Route::get('/redirect2', [RedirectController::class, 'RedirectAction2']);
 
 // Task 3: Global Middleware
+Route::middleware(['log.request'])->group(function () {
+    Route::get('/global-middleware', function () {
+        return 'Global Middleware';
+    });
+
+    Route::get('/global-middleware2', function () {
+        return 'Global Middleware 2';
+    });
+});
+
 
 // Task 4: Route Middleware
-
 
 Route::middleware(['auth1'])->group(function(){
     Route::get('/auth1/{key}', [AuthController::class, 'AuthAction1']);
@@ -46,6 +55,7 @@ Route::resource('products', ProductController::class);
 
 // Task 6: Single Action Controller
 // Route::post('/contact', ContactController::class);
+
 
 // Task 7: Resource Controller
 Route::resource('posts', PostController::class);

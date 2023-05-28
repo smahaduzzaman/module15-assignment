@@ -4,9 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 
-class RedirectMiddleware
+class LogRequest
 {
     /**
      * Handle an incoming request.
@@ -15,14 +16,8 @@ class RedirectMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-$key = $request->key;
-
-
-        if ($key == "ABCD1234") {
-            return redirect('/dashboard');
-        } else {
-return $next($request);
-
-        }
+        Log::info('Request Method: ' . $request->getMethod());
+        Log::info('Request URL: ' . $request->fullUrl());
+        return $next($request);
     }
 }
