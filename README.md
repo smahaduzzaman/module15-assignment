@@ -1,67 +1,58 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Assignment: Laravel Concepts Assessment
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Author:
+- Name: S M Ahaduzzaman
+- Email: smahaduzzaman96@gmail.com
+- Phone: 01729-972223
 
-## About Laravel
+# Instructions:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Welcome to the Laravel Concepts Assessment! In this coding assignment, you will demonstrate your understanding and proficiency in various Laravel concepts and best practices. Follow the instructions provided for each task and complete them using the Laravel framework.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Task 1: Request Validation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Your first task is to implement request validation for a registration form. The form should contain the following fields: name, email, and password. You need to validate the following rules for each field:
 
-## Learning Laravel
+name: required, string, minimum length 2.
+email: required, valid email format.
+password: required, string, minimum length 8.
+Ensure that you follow Laravel's best practices for request validation.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Task 2: Request Redirect
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+For the second task, create a route "/home" that redirects to "/dashboard" using a 302 redirect. Implement this redirection in your Laravel application.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Task 3: Global Middleware
 
-## Laravel Sponsors
+In the third task, you need to create a global middleware that logs the request method and URL for every incoming request. Make sure to log this information to the Laravel log file. Implement the middleware following Laravel's guidelines.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Task 4: Route Middleware
 
-### Premium Partners
+For the fourth task, create a route group for authenticated users only. This group should include routes for "/profile" and "/settings". Apply a middleware called AuthMiddleware to the route group to ensure that only authenticated users can access these routes. Implement this route group and middleware configuration in your Laravel application.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Task 5: Controller
 
-## Contributing
+In the fifth task, you will create a controller called ProductController that handles CRUD operations for a resource called Product. Implement the following methods in the ProductController:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+index(): Display a list of all products.
+create(): Display the form to create a new product.
+store(): Store a newly created product.
+edit($id): Display the form to edit an existing product.
+update($id): Update the specified product.
+destroy($id): Delete the specified product.
+Implement these methods according to Laravel's controller conventions and best practices.
 
-## Code of Conduct
+## Task 6: Single Action Controller
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+For the sixth task, create a single action controller called ContactController that handles a contact form submission. Implement the __invoke() method in the ContactController to process the form submission and send an email to a predefined address with the submitted data. Use Laravel's mailing functionality for this task.
 
-## Security Vulnerabilities
+## Task 7: Resource Controller
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+In the seventh task, create a resource controller called PostController that handles CRUD operations for a resource called Post. Ensure that the controller provides the necessary methods for the resourceful routing conventions in Laravel. Follow Laravel's conventions for resource controllers.
 
-## License
+## Task 8: Blade Template Engine
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# module15-assignment
+For the final task, create a Blade view called welcome.blade.php. This view should include a navigation bar and a section displaying the text "Welcome to Laravel!". Implement this Blade view using Laravel's Blade template engine.
+
+## Submission:
+- GitHub: https://github.com/smahaduzzaman/module15-assignment
